@@ -7,7 +7,7 @@ class Invoice {
     constructor() {
     }
 
-    create(params: {
+    static create(params: {
         recipients: Array<{ address: string, amount: number }>,
         currency: string,
         chain: string,
