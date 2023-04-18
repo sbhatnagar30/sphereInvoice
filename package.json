@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "start":"npx ts-node ./src/server.ts"
+  },
   "dependencies": {
     "express": "^4.18.2",
     "level-ts": "^2.1.0"
