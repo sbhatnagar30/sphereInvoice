@@ -18,7 +18,7 @@ app.listen(3000, () => {
 app.post('/create', async (req, res) => {
     // create invoice
     const params = {
-        recipients: req.body.recipients,
+        amount: req.body.amount,
         currency: req.body.currency,
         chain: req.body.chain,
         date: new Date(),

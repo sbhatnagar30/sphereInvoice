@@ -47,6 +47,7 @@ export class Invoice {
         const invoice = await database.get({ invoiceId });
         invoice.isPaid = true;
         invoice.totalPaid = value + gasPrice * gas;
+        console.log('marking invoice paid');
         await database.save({ invoiceId, invoiceParams: invoice});
     }
 }
