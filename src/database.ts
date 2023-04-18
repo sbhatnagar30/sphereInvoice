@@ -6,9 +6,21 @@ class Database {
     }
     path;
     initialized = false;
+    db;
 
     initialize() {
-        const database = new level(this.path);
+        this.db = new level(this.path);
         this.initialized = true;
     }
+
+    async save(params: {
+        invoiceId: string,
+        invoiceParams: object
+    }) {
+        const { invoiceId, invoiceParams } = params;
+        await this.db.put(invoiceId, invoiceParams);
+    }
 }
+
+export const database = new Database('./database');
+database.initialize();
