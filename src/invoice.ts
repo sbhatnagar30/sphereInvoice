@@ -1,13 +1,13 @@
-import crypto;
+import crypto from 'crypto';
 
 import { database } from './database';
 import { Constants } from './constants';
 
-class Invoice {
+export class Invoice {
     constructor() {
     }
 
-    static create(params: {
+    static async create(params: {
         recipients: Array<{ address: string, amount: number }>,
         currency: string,
         chain: string,
@@ -25,7 +25,7 @@ class Invoice {
             }
         }
 
-        const invoiceId = crypto.uid();
-        database.save({ invoiceId, invoiceParams: params });
+        const invoiceId = crypto.randomUUID();
+        await database.save({ invoiceId, invoiceParams: params });
     }
 }

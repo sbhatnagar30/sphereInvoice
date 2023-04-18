@@ -1,12 +1,11 @@
 import level from 'level-ts';
-
 class Database {
     constructor(dbpath: string) {
         this.path = dbpath || './database';
     }
     path;
     initialized = false;
-    db;
+    db: any;
 
     initialize() {
         this.db = new level(this.path);
