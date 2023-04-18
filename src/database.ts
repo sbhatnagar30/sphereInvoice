@@ -19,6 +19,12 @@ class Database {
         const { invoiceId, invoiceParams } = params;
         await this.db.put(invoiceId, invoiceParams);
     }
+
+    async get(params: any) {
+        const { invoiceId } = params;
+        const invoice = await this.db.get(invoiceId);
+        return invoice;
+    }
 }
 
 export const database = new Database('./database');
