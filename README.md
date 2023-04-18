@@ -23,3 +23,4 @@ the server will print the port and also the hot wallet address that it is using 
 * implement proper invoice ids
 * use contract to accept payments instead of address
 * update confirmations on invoices based on incoming block hashes
+* expand hot wallet features to be able to refund and sweep
