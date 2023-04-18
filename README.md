@@ -3,6 +3,11 @@
 ### Install Dependencies
 ```npm i```
 
+You will also need an instance of ganache-cli running:
+```npm i -g ganache-cli```
+
+then start ganache in terminal: `ganache-cli`
+
 ### Start the Server
 ```npm start```
 
